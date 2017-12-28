@@ -1,4 +1,5 @@
 #!/bin/bash -x
+# usage: $0 email@account.com
 
 DOMAIN=$(echo $1 | cut -f2 -d@)
 
