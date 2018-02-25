@@ -37,9 +37,11 @@ RUN mkdir -p $HOME/.mutt/cache/headers \
              $HOME/.mutt/temp \
     && touch $HOME/.mutt/certificates
 
-RUN git clone --depth 1 https://github.com/srvaroa/rc $HOME/rc \
-    && cp $HOME/rc/.vim/vimrc $HOME/.vimrc \
-    && cp $HOME/rc/mutt/* $HOME/.mutt/
+RUN git clone --recursive --depth 1 https://github.com/srvaroa/rc $HOME/rc \
+    && ln -s $HOME/rc/.vimrc $HOME/.vimrc \
+    && ln -s $HOME/rc/.vim $HOME/.vim \
+    && ln -s $HOME/rc/mutt/muttcolours $HOME/.mutt/ \
+    && ln -s $HOME/rc/mutt/muttrc $HOME/.mutt/
 
 ENV LANG C.UTF-8
 
