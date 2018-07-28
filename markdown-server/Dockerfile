@@ -25,4 +25,4 @@ ENV BROWSER links
 ENV TERM xterm-256color
 ENV LANG C.UTF-8
 
-CMD ["markdownserver"]
+ENTRYPOINT ["markdownserver"]
