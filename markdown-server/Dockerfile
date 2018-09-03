@@ -1,9 +1,3 @@
-# docker run -it \
-#   -v /etc/localtime:/etc/localtime:ro \
-#   -e IMAP_SERVER \
-#   --name mutt \
-#   mutt
-#
 FROM alpine:edge
 LABEL maintainer "Galo Navarro <anglorvaroa@gmail.com>"
 
