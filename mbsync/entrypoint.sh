@@ -1,16 +1,23 @@
 #!/bin/bash -x
 set -e
 
-if [ -z "$PASSWORD" ]; then
-  echo >&2 'error: missing PASSWORD'
+if [ -z "$G_PASSWORD" ]; then
+  echo >&2 'error: missing G_PASSWORD'
   exit 1
 fi
+
+if [ -z "$V_PASSWORD" ]; then
+  echo >&2 'error: missing V_PASSWORD'
+  exit 1
+fi
+
 
 if [ -z "$MAILDIR" ]; then
   echo >&2 'error: missing MAILDIR'
   exit 1
 fi
 
-sed -i "s/%PASSWORD%/$PASSWORD/g" $HOME/.mbsyncrc
+sed -i "s/%G_PASSWORD%/$G_PASSWORD/g" $HOME/.mbsyncrc
+sed -i "s/%V_PASSWORD%/$V_PASSWORD/g" $HOME/.mbsyncrc
 
 exec "$@"

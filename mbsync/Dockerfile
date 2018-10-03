@@ -16,10 +16,11 @@ ENV HOME /home/user
 ENV LANG C.UTF-8
 
 RUN git clone --depth 1 https://github.com/srvaroa/dotfiles $HOME/dotfiles
+RUN ln -s $HOME/dotfiles/.certs $HOME
 
 COPY .mbsyncrc $HOME/.mbsyncrc
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
 
-CMD ["mbsync", "-V", "gmail"]
+CMD mbsync -V -a
