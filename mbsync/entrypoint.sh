@@ -11,12 +11,6 @@ if [ -z "$V_PASSWORD" ]; then
   exit 1
 fi
 
-
-if [ -z "$MAILDIR" ]; then
-  echo >&2 'error: missing MAILDIR'
-  exit 1
-fi
-
 sed -i "s/%G_PASSWORD%/$G_PASSWORD/g" $HOME/.mbsyncrc
 sed -i "s/%V_PASSWORD%/$V_PASSWORD/g" $HOME/.mbsyncrc
 
