@@ -23,4 +23,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
 
-CMD mbsync -V -a
+CMD []

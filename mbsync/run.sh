@@ -11,9 +11,11 @@ fi
 
 export G_PASSWORD=$(gpg -q -d $MUTT_PW_FILE | grep G= | cut -f2 -d=)
 export V_PASSWORD=$(gpg -q -d $MUTT_PW_FILE | grep V= | cut -f2 -d=)
+export CHANNEL=${1:--a}
 
 docker run --rm \
     -e G_PASSWORD \
     -e V_PASSWORD \
+    -e CHANNEL \
     -v ~/.mail:/home/user/.mail \
     mbsync
