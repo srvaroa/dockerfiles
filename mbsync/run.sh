@@ -17,5 +17,6 @@ docker run --rm \
     -e G_PASSWORD \
     -e V_PASSWORD \
     -e CHANNEL \
+    -v ~/.mbsyncrc:/home/user/.mbsyncrc_original \
     -v ~/.mail:/home/user/.mail \
     mbsync
