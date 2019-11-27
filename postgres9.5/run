@@ -1,6 +1,0 @@
-#!/bin/bash
-if [ -f /tmp/localtime ]
-then
-    ln -s /etc/localtime /tmp/localtime
-fi
-docker run -it -v /etc/localtime:/etc/localtime:ro -e EMAIL="anglor@varoa.net"  -e IMAP_SERVER="imap.varoa.net" mutt
