@@ -1,6 +1,5 @@
 # From https://github.com/froulet/docker-newsboat/
-FROM alpine:latest
-
+FROM armhf/alpine:latest
 RUN sed -i -e 's/v[[:digit:]]\.[[:digit:]]/edge/g' /etc/apk/repositories
 
 RUN apk update && \
