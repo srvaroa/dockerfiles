@@ -14,6 +14,7 @@ export V_PASSWORD=$(gpg -q -d $MUTT_PW_FILE | grep V= | cut -f2 -d=)
 export CHANNEL=${1:--a}
 
 docker run --rm \
+    --dns=1.1.1.1 \
     -e G_PASSWORD \
     -e V_PASSWORD \
     -e CHANNEL \
